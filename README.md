@@ -1,4 +1,4 @@
-# Aprendizado de visão computacional real-time usando OPENCV e Python
+# Aprendizado de visão computacional  usando OPENCV e Python
 ![Screenshot](image/screenshotCV.png)
 
 *Me desculpem pela imagem não tão linda :):):)*
