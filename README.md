@@ -19,7 +19,7 @@ O intuito da apicação é entender como funciona o OPENCV e Visão computaciona
 
 # Executando o projeto
 ```
-python detectFace.py
+python appComputerVision.py
 ```
 
 ## Nota
