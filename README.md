@@ -1,5 +1,5 @@
 ## Aprendizado de visão computacional real-time usando OPENCV e Python
-Aplicação de Visão computacional, sorriso e olhos real-time usando OPENCV e Python. A ideia é reconhecer rostos, um soriso ou os olhos usando a webcam do seu notebook.
+A ideia é usar o OPENCV para reconhecer rosto, sorriso e olhos usando a webcam do seu notebook.
 
 ![Screenshot](image/screenshotCV.png)
 
