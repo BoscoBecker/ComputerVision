@@ -6,7 +6,9 @@
 #
 
 import cv2
+import time
 from PIL import ImageFont, ImageDraw, Image
+
 
 arqCasc1 = 'haarcascade/haarcascade_frontalface_default.xml'
 arqCasc2 = 'haarcascade/haarcascade_eye.xml'
@@ -19,7 +21,14 @@ faceCascade3 = cv2.CascadeClassifier(arqCasc3) #Smile
 #captureDevice = camera
 webcam = cv2.VideoCapture(0, cv2.CAP_DSHOW) 
 
+faceCounter = 0 
+olhoCounter = 0
+smileCounter = 0
+
+
 while True:
+   
+
 
     #Use the webcam Image
     ret, imagem = webcam.read() 
@@ -40,7 +49,7 @@ while True:
         minSize=(10, 10),
 	maxSize=(90,90)
     )
-
+ 
     smile = faceCascade3.detectMultiScale(
         imagem, 
         scaleFactor = 1.8, 
@@ -51,21 +60,41 @@ while True:
     font = cv2.FONT_HERSHEY_SIMPLEX 
   
     # inserting text on video 
-    cv2.putText(imagem,'Para finalizar pressione a tecla (Q).',(10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0))  
+    cv2.putText(imagem,'Para finalizar pressione a tecla (Q).',(10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0))  
+    
+    #Smile counter
+    cv2.putText(imagem,'Rosto(s): '+ str(faceCounter) ,(5, 400), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 245))    
+
+    #Olho counter
+    cv2.putText(imagem,'Olho(s): '+ str(olhoCounter) ,(5, 430), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0))    
+
+    #Sorriso counter
+    cv2.putText(imagem,'Sorriso(s): '+ str(smileCounter) ,(5, 460), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0))   
+
+    t = time.localtime()
+    current_time = time.strftime("%H:%M:%S", t) 
+    cv2.putText(imagem,str(current_time)  ,(520,20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0)) 
 
     # Draw the rectangle on face, eyes and smile detected
     for (x, y, w, h) in faces:
         cv2.rectangle(imagem, (x, y), (x+w, y+h), (0, 0, 245), 4)
-        cv2.putText(imagem,'Rosto detectado', (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(0, 0, 245))
-
-    for (x, y, w, h) in olhos:
-        cv2.rectangle(imagem, (x, y), (x+w, y+h), (0, 0, 102), 2)        
-        cv2.putText(imagem,'Olhos', (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 102))
+        cv2.putText(imagem,'Rosto detectado', (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(0, 0, 245)) #Blue
+        faceCounter=faceCounter+1
+        print("Rosto detectados: " + str(faceCounter))
     
-    for (x, y, w, h) in smile:
-       cv2.rectangle(imagem, (x, y), (x+w, y+h), (255, 255, 0), 5)        
-       cv2.putText(imagem,'Sorriso', (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0))
+    for (x, y, w, h) in olhos:
+        cv2.rectangle(imagem, (x, y), (x+w, y+h), (255, 255, 0), 2)        
+        cv2.putText(imagem,'Olhos', (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0)) #Yellow
+        olhoCounter=olhoCounter+1
+        print("Olhos detectados: " + str(olhoCounter))
 
+    for (x, y, w, h) in smile:
+       cv2.rectangle(imagem, (x, y), (x+w, y+h), (255, 0, 0), 5)        
+       cv2.putText(imagem,'Sorriso', (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0)) #Red
+       smileCounter=smileCounter+1
+       print("Sorrisos detectados: " + str(smileCounter))
+
+    
     #Show the imagem using your webcam
     cv2.imshow('Webcam On', imagem)
 
