@@ -1,7 +1,7 @@
-# Aprendizado de visão computacional  usando OPENCV e Python
+# Aprendizado de visão computacional usando OPENCV e Python
 ![Screenshot](image/screenshotCV.png)
 
-*Me desculpem pela imagem não tão linda :):):)*
+*Me desculpem pela imagem não tão linda😂😂*
 
 Aplicação de Visão computacional, sorriso e olhos real-time usando OPENCV e Python. A ideia é reconhecer rostos, um soriso ou os olhos usando a webcam do seu notebook.
 
@@ -17,7 +17,7 @@ O intuito da apicação é entender como funciona o OPENCV e Visão computaciona
 
 # Executando o projeto
 ```
-python detectFace.py
+python appComputerVision.py
 ```
 
 ## Nota
@@ -29,11 +29,11 @@ Ao realizar diversos testes pude perceber que ao usar o haarcascade(haarcascade_
 eu estava usando uma camisa da NIKE e o mesmo interpretou como sorriso, então . . . resumindo . . .
  ![Screenshot](image/screenshotCVFalsoPositivo.png)
  
- *Não recomendo usar camisa da NIKE ao tentar detectar sorriso :)*
+ *Não recomendo usar camisa da NIKE ao tentar detectar sorriso😁 *
 
 
 ## Maquina usada para o desenvolvimento
-* Processador: AMD 1.0 Ghz (Bem ruim, é eu sei, complicated)
+* Processador: AMD 1.0 Ghz (Bem ruim, é eu sei, Complicated 😢😢)
 * Memoria RAM : 6.0 
 * OS WIndows 10 Pro 64 Bits
 
