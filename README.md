@@ -1,5 +1,6 @@
-# Aprendizado de visão computacional real-time usando OPENCV e Python
+## Aprendizado de visão computacional real-time usando OPENCV e Python
 ![Screenshot](image/screenshotCV.png)
+
 *Me desculpem pela imagem não tão linda LOL*
 
 Aplicação de Visão computacional, sorriso e olhos real-time usando OPENCV e Python. A ideia é reconhecer rostos, um soriso ou os olhos usando a webcam do seu notebook.
@@ -9,9 +10,9 @@ Aplicação de Visão computacional, sorriso e olhos real-time usando OPENCV e P
 O intuito da apicação é entender como funciona o OPENCV e Visão computacional(Computer Vision)usando Python.
 
 ## Requisitos
-    - [OpenCV 3.0](http://opencv.org/)
-    - [Python > 3.5](https://www.python.org/downloads/)
-    - [Haarcascades](https://github.com/opencv/opencv/tree/master/data/haarcascades)
+   - [OpenCV 3.0](http://opencv.org/)
+   - [Python > 3.5](https://www.python.org/downloads/)
+   - [Haarcascades](https://github.com/opencv/opencv/tree/master/data/haarcascades)
 
 
 # Executando o projeto
