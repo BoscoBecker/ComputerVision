@@ -24,8 +24,8 @@ python detectFace.py
 - Moving the `.read()` part of the video stream in a multiple child processes did not work. However, it was possible to move it to a separate thread.
 
 ## Falso Positivo
-Ao realizar diversos testes pude perceber que ao usar o haarcascade(haarcascade_smile.xml) para detecção de sorriso
-estava usando uma camisa da NIKE e o mesmo interpretou como sorriso, então . . . resumindo . . .
+Ao realizar diversos testes pude perceber que ao usar o haarcascade(haarcascade_smile.xml) para detecção de sorriso, 
+eu estava usando uma camisa da NIKE e o mesmo interpretou como sorriso, então . . . resumindo . . .
  ![Screenshot](image/screenshotCVFalsoPositivo.png)
  *Não recomendo usar camisa da NIKE ao tentar detectar sorriso :)*
 
